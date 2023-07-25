@@ -1,0 +1,59 @@
+<%- include('../../header.ejs') %>
+
+<!-- sidebar  -->
+<div class="flex my-14 justify-evenly flex-wrap h-screen">
+    <div>
+        <ul class="flex flex-col space-y-1 w-72 text-lg">
+            <a href="/admin/dashbord" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Dashboard</a>
+            <a href="/admin/blog/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Blogs</a>
+            <a href="/admin/category/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Categories</a>
+            <a href="/admin/contact/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Contact</a>
+            <a href="/admin/about/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">About</a>
+            <a href="/logout" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Logout</a>
+        </ul>
+    </div>
+
+
+
+  <div class="w-3/5">
+    <div class="flex justify-between mb-4">
+        <div>
+            <h1 class="text-3xl font-medium">Category List</h1>
+        </div>
+        <div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-success bg-green-500 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add Category
+            </button>
+        </div>
+    </div>
+    <table class="table table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Author</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% i =1 %>
+            <tr>
+              <td><%= i++ %></td>
+              <td><img src="<%= view.image.url %>" width="100px"></td>
+              <td width="150px"><%= view.title %></td>
+              <td width="500px"><%= view.description %></td>
+              <td width="200px"><%= view.author %></td>
+            </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
+  
+  
+  
+
+
+
+<%- include('../../footer.ejs') %>

@@ -1,0 +1,49 @@
+<%- include('../../header.ejs') %>
+
+    <!-- sidebar  -->
+    <div class="flex my-14 justify-evenly flex-wrap h-screen py-5">
+        <div>
+            <ul class="flex flex-col space-y-1 w-72 text-lg">
+                <a href="/admin/dashbord" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Dashboard</a>
+                <a href="/admin/blog/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Blogs</a>
+                <a href="/admin/category/display"class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Categories</a>
+                <a href="/admin/contact/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Contact</a>
+                <a href="/admin/about/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">About</a>
+                <a href="/logout" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Logout</a>
+            </ul>
+        </div>
+
+        <!-- blog-list  -->
+        <div class="w-3/5">
+            <div class="flex justify-between mb-4">
+              <div>
+                <h1 class="text-3xl font-medium">Blog view</h1>
+              </div>
+            </div>
+            <table class="table table-bordered">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">S.</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Image</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% i = 1 %>
+                <tr>
+                  <td><%= i++ %></td>
+        
+                  <td width="70px"><%= view.title %></td>
+                  <td width="550px"><%= view.description %></td>
+                  <td><img src="<%= view.image.url %>" alt=""></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+
+
+    
+
+    <%- include('../../footer.ejs') %>

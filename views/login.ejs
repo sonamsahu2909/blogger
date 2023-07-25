@@ -1,0 +1,43 @@
+<%- include('./header.ejs') %> 
+
+<section class="section6">
+    <div class="main">
+        <div class="text">
+            <h2><span>ADMIN</span> LOGIN</h2>
+                <p>GREAT TO HAVE YOU BACK</p>
+        </div>
+        <% if(message.length > 0){ %>
+            <div class="alert alert-success">
+                <%= message %>
+            </div>
+        <% } %>
+        <% if(error.length > 0){ %>
+            <div class="alert alert-danger">
+                <%= error %>
+            </div>
+        <% } %>
+
+        <form action="/verify_login" method="post" >
+   
+            <div class="md-3 mb-3">
+                <input type="Email" name="email" class="form-control" placeholder="Email" />              
+            </div>
+            <div class="md-3 mb-3">
+                <input type="password" name="password" class="form-control" placeholder="Password" />              
+            </div>         
+            <div class="d-flex justify-content-end ">         
+              <button type="submit" class="btn btn-primary bg-blue-500">
+                Login
+              </button>
+            </div>
+          </form>
+
+        <div class="other">
+            <h5>DON`T HAVE AN ACCOUNT?</h5>
+            <a href="/signup">REGISTER NOW</a>
+        </div>
+        
+    </div><!--main div end-->
+</section><!--section 6 end-->
+
+<%- include('./footer.ejs') %> 

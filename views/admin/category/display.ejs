@@ -1,0 +1,109 @@
+<%- include('../../header.ejs') %>
+
+<!-- sidebar  -->
+<div class="flex my-14 justify-evenly flex-wrap h-screen pt-5">
+    <div>
+        <ul class="flex flex-col space-y-1 w-72 text-lg">
+            <a href="/admin/dashbord" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Dashboard</a>
+            <a href="/admin/blog/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Blogs</a>
+            <a href="/admin/category/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Categories</a>
+            <a href="/admin/contact/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Contact</a>
+            <a href="/admin/about/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">About</a>
+            <a href="/logout" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Logout</a>
+        </ul>
+    </div>
+
+
+
+<div class="w-3/5">
+    <div class="flex justify-between mb-4">
+        <div>
+            <h1 class="text-3xl font-medium">Category List</h1>
+        </div>
+        <div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-success bg-green-500 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add Category
+            </button>
+        </div>
+    </div>
+    <table class="table table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Author</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% i =1 %>
+          <% c.forEach((item)=>{ %>
+            <tr>
+              <td><%= i++ %></td>
+              <td><img src="<%= item.image.url %>" width="100px"></td>
+              <td width="70px"><%= item.title %></td>
+              <td width="600px"><%= item.description %></td>
+              <td width="70px"><%= item.author %></td>
+              <td class="space-x-3" width="200px">
+                <a href="/categoryview/<%= item._id %>">
+                    <i class="fa-solid fa-eye"></i>
+                </a>
+                <a href="/categoryedit/<%= item._id %>">
+                    <i class="fa-solid fa-pen-to-square text-blue-500"></i>
+                </a>
+                <a href="/categorydelete/<%= item._id %>">
+                    <i class="fa-solid fa-trash-can text-red-500"></i>
+                </a>
+            </td>
+            </tr>
+          <% }) %>
+          
+        </tbody>
+      </table>
+  </div>
+  </div>
+  
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Category</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/insertCategory" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="" class="mb-1">Upload Image</label>
+                <input type="file" name="image" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="" class="mb-1">Category Title</label>
+                <input type="text" name="title" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="" class="mb-1">Description</label>
+                <textarea name="description" class="form-control"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="" class="mb-1">Author</label>
+              <input type="text" name="author" class="form-control">
+          </div>
+            <div class="mb-3 d-flex justify-content-end">
+              <button type="button" class="btn btn-secondary me-2 bg-slate-500" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary bg-blue-500">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<%- include('../../footer.ejs') %>

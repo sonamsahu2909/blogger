@@ -1,0 +1,55 @@
+<%- include('../../header.ejs') %>
+
+<div class="flex my-14 justify-evenly flex-wrap h-screen">
+    <div>
+        <ul class="flex flex-col space-y-1 w-72 text-lg">
+            <a href="/admin/dashbord" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Dashboard</a>
+            <a href="/admin/blog/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Blogs</a>
+            <a href="/admin/category/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Categories</a>
+            <a href="/admin/contact/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Contact</a>
+            <a href="/admin/about/display" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">About</a>
+            <a href="/logout" class="bg-[#e5e7eb8a] p-2 hover:bg-black hover:text-white">Logout</a>
+        </ul>
+    </div>
+
+
+
+  <div class="w-3/5">
+    <div class="flex justify-between mb-4">
+        <div>
+            <h1 class="text-3xl font-medium">Category Update</h1>
+        </div>
+    </div>
+    <form action="/categoryupdate/<%= edit._id %>" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <img src="<%= edit.image.url %>" width="150px" alt="">
+        </div>
+        <div class="mb-3">
+            <label for="">Upload Image</label>
+            <input type="file" class="form-control" name="image">
+        </div>
+        <div class="mb-3">
+            <label for="">Title</label>
+            <input type="text" class="form-control" name="title" value="<%= edit.title %>">
+        </div>
+        <div class="mb-3">
+            <label for="">Description</label>
+            <textarea type="text" class="form-control" id="" cols="30" rows="10" name="description">
+            <%= edit.description %>
+        </textarea>
+        </div>
+        <div class="mb-3">
+            <label for="">Author</label>
+            <input type="text" class="form-control" name="author" value="<%= edit.author %>">
+        </div>
+       
+
+        <button type="submit" class="btn btn-primary bg-blue-500 mb-4">UPDATE</button>  
+    </form>
+  </div>
+</div>
+
+
+
+
+ <%- include('../../footer.ejs') %>

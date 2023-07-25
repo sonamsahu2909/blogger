@@ -1,0 +1,37 @@
+<%- include('./header.ejs') %> 
+
+<section class="section1">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHJLY2J7pFplMhwS-zEpVHVkltZdCzQ-c7LBHX8jUazCEalfIU8WPx-syGLacmq7xJKfY&usqp=CAU"
+    />
+  </section>
+  <!--section 1 end-->
+  
+  <div class="container pt-4 mb-4 ">
+   
+      <div class="row ">
+        <% b.forEach((item)=>{ %>
+        <div class="col-4 mb-4 mt-4">
+          <div class="card shadow-lg" >
+            <div>
+                   <img src="<%= item.image.url %>" class="mt-3" style="height: 250px; width: 100%;"/>
+            </div>
+           
+            
+              <div class="card-body text-center">
+                  <h3><%= item.title %></h3>
+                  <br />
+                  <p><span><%= item.createdAt.toLocaleDateString() %></span> <br /><br /><%= item.description.slice(0,100) %></p>
+                  <br />
+          
+                  <button class="bg-info"><a href="/readmore/<%= item._id %>">Read More...</a></button>
+               
+              </div>
+          </div>
+        </div><% }) %>
+      </div>
+  
+  </div> 
+  <!--section 2 end-->
+
+<%- include('./footer.ejs') %> 

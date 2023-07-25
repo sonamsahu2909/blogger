@@ -1,0 +1,36 @@
+<%- include('./header.ejs') %>
+
+    <div class="container mt-5 mb-5 ">
+
+        <div class="row ">
+            <% b.forEach((item)=>{ %>
+                <div class="col-4 mb-4 mt-5">
+                    <div class="card shadow-lg" >
+                        <div>
+                            <img src="<%= item.image.url %>" style="height: 250px; width: 100%;" class="mt-4" />
+                        </div>
+
+
+                        <div class="card-body text-center">
+                            <h3>
+                                <%= item.title %>
+                            </h3>
+                            <br />
+                            <p><span>
+                                    <%= item.createdAt.toLocaleDateString() %>
+                                </span> <br /><br />
+                                <%= item.description.slice(0,100) %>
+                            </p>
+                            <br />
+
+                            <button class="bg-info"><a href="/readmore/<%= item._id %>">Read More...</a></button>
+
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+
+    </div>
+
+    <%- include('./footer.ejs') %>
