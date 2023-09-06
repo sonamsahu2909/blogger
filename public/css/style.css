@@ -1,19 +1,29 @@
  * {
      margin: 0px;
      padding: 0px;
-     font-family: cursive;
+     /* font-family: cursive; */
+ }
+ .h2{
+    font-weight: bold;
+    font-size: medium;
  }
 
  .a{
     color: whitesmoke;
  }
-
+.bg-green{
+    background-color: #74a84a !important;
+    
+}
+.txt-green{
+    color: #74a84a !important;
+}
 
  /* nav bar */
  .navbar {
      background-color: #000000c2 !important;
      cursor: pointer;
-     color: white !important;
+     color: #74a84a !important;
  }
 
  .navbar-nav li {
@@ -21,7 +31,8 @@
  }
 
 .navbar-nav li a{
-     color: #fff !important;
+     color: black !important;
+     font-weight: bolder;
      font-weight: 800px;
      font-size: 24px;
      text-decoration: none !important;
@@ -341,7 +352,7 @@
  }
 
  /*section 2*/
-
+/* 
 
 
  .section6 {
@@ -357,7 +368,7 @@
  .section6 .main {
      height: 379px;
      width: 655px;
-     /*    background-color: red;*/
+        background-color: red;
      position: absolute;
      top: 112px;
      left: 391px;
@@ -456,7 +467,7 @@
  .section6 .other a:hover {
      color: yellow;
  }
-
+ */
 
 
 
@@ -493,13 +504,14 @@
 
  .section7 .img img {
      height: 421px;
-     width: 635px;
+     width: 800px;
  }
 
  .section7 .text {
      position: absolute;
-     width: 730px;
+     width: 800px;
      height: 200px;
+     text-align: justify;
      /*    border: 2px solid;*/
      left: 100px;
      top: 600px;
@@ -522,7 +534,7 @@
  }
 
  .section7 .head h2 {
-     background-color: #386576;
+     background-color: #d2eaec;
      color: whitesmoke;
      padding: 3px 21px 8px 16px;
      font-size: 13px;

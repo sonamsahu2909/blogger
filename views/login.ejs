@@ -1,6 +1,61 @@
-<%- include('./header.ejs') %> 
+<%- include('./header.ejs') %>
 
-<section class="section6">
+
+    <section class="vh-100" style="background-color: #d1e9ed;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center ">
+
+                            <div class="main">
+                                <div class="text">
+                                    <h2 class="h2"><span>ADMIN</span> LOGIN</h2>
+                                    <p>GREAT TO HAVE YOU BACK</p>
+                                </div>
+                                <% if(message.length> 0){ %>
+                                    <div class="alert alert-success">
+                                        <%= message %>
+                                    </div>
+                                    <% } %>
+                                        <% if(error.length> 0){ %>
+                                            <div class="alert alert-danger">
+                                                <%= error %>
+                                            </div>
+                                            <% } %>
+
+                                                <form action="/verify_login" method="post">
+
+                                                    <div class="md-3 mb-3">
+                                                        <input type="Email" name="email" class="form-control"
+                                                            placeholder="Email" />
+                                                    </div>
+                                                    <div class="md-3 mb-3">
+                                                        <input type="password" name="password" class="form-control"
+                                                            placeholder="Password" />
+                                                    </div>
+                                                    <div class="d-flex justify-content-center mb-2 ">
+                                                        <button type="submit"
+                                                            class="btn btn-primary bg-green border-0 justify-content-center bg-blue-500">
+                                                            Login
+                                                        </button>
+                                                    </div>
+                                                </form>
+
+                                                <div class="other">
+                                                    <h5>DON`T HAVE AN ACCOUNT?</h5>
+                                                    <a href="/signup" class="h2 txt-green">REGISTER NOW</a>
+                                                </div>
+
+                            </div><!--main div end-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="section6">
     <div class="main">
         <div class="text">
             <h2><span>ADMIN</span> LOGIN</h2>
@@ -37,7 +92,7 @@
             <a href="/signup">REGISTER NOW</a>
         </div>
         
-    </div><!--main div end-->
-</section><!--section 6 end-->
+    </div>
+</section> -->
 
-<%- include('./footer.ejs') %> 
+    <%- include('./footer.ejs') %>

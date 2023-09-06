@@ -1,80 +1,92 @@
 <%- include("./header.ejs") %>
 
 
-    <section class="section6 mt-5 pt-4 container-fluid">
-        <div class=" container ">
+    <section class="vh-100" style="background-color: #d1e9ed;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body  text-center ">
 
-            <div class="row">
-                <div class="col-3">
+                            <div class=" container ">
 
-                </div>
-                <div class="col-6">
-                    <div class="text row mb-2">
+                                <div class="row">
+                                    <div class="col-0">
 
-                        <h2>Register Here</h2>
-                    </div>
-                    <% if(error.length> 0){ %>
-                        <div class="alert alert-danger">
-                            <%= error %>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="text h2 row mb-2">
+
+                                            <h2>Register Here</h2>
+                                        </div>
+                                        <% if(error.length> 0){ %>
+                                            <div class="alert alert-danger">
+                                                <%= error %>
+                                            </div>
+                                            <% } %>
+
+
+
+                                                <form action="/insert" enctype="multipart/form-data" method="post"
+                                                    onsubmit="return validation()">
+                                                    <div class="form-outline mb-3">
+                                                        <input name="name" type="type" id="user" class="form-control"
+                                                            placeholder="Full name" required>
+                                                        <span id="username" class="text-danger"></span>
+                                                    </div>
+
+                                                    <div class="form-outline mb-3">
+                                                        <input name="email" type="email" id="email" class="form-control"
+                                                            placeholder="Email" required>
+                                                    </div>
+
+                                                    <div class="form-outline mb-3">
+                                                        <input name="password" type="password" id="pass"
+                                                            class="form-control" placeholder="password" required>
+                                                        <span id="password" class="text-danger"></span>
+                                                    </div>
+
+                                                    <div class="form-outline mb-3">
+                                                        <input name="cpassword" type="password" id="cpass"
+                                                            class="form-control" placeholder="Confirm password"
+                                                            required>
+                                                        <span id="cpassword" class="text-danger"></span>
+                                                    </div>
+
+                                                    <div class="form-outline mb-3">
+                                                        <input name="image" type="file" class="form-control">
+                                                    </div>
+
+                                                    <div class="d-flex justify-content-center ">
+
+                                                        <button type="submit" class="btn btn-primary bg-green border-0 mb-2">
+                                                            Sign Up
+                                                        </button>
+                                                    </div>
+                                                    <div class="other">
+                                                        <h5>HAVE AN ACCOUNT?</h5>
+                                                        <a href="/login">sign in</a>
+                                                    </div>
+                                                </form>
+
+                                    </div>
+                                    <div class="col-0">
+
+                                    </div>
+
+                                </div>
+
+
+
+
+                            </div><!--main div end-->
                         </div>
-                        <% } %>
-
-
-
-                            <form action="/insert" enctype="multipart/form-data" method="post"
-                                onsubmit="return validation()">
-                                <div class="form-outline mb-3">
-                                    <input name="name" type="type" id="user" class="form-control"
-                                        placeholder="Full name" required>
-                                    <span id="username" class="text-danger"></span>
-                                </div>
-
-                                <div class="form-outline mb-3">
-                                    <input name="email" type="email" id="email" class="form-control" placeholder="Email"
-                                        required>
-                                </div>
-
-                                <div class="form-outline mb-3">
-                                    <input name="password" type="password" id="pass" class="form-control"
-                                        placeholder="password" required>
-                                    <span id="password" class="text-danger"></span>
-                                </div>
-
-                                <div class="form-outline mb-3">
-                                    <input name="cpassword" type="password" id="cpass" class="form-control"
-                                        placeholder="Confirm password" required>
-                                    <span id="cpassword" class="text-danger"></span>
-                                </div>
-
-                                <div class="form-outline mb-3">
-                                    <input name="image" type="file" class="form-control">
-                                </div>
-
-                                <div class="d-flex justify-content-end">
-
-                                    <button type="submit" class="btn btn-primary bg-blue-500">
-                                        Sign Up
-                                    </button>
-                                </div>
-                                <div class="other">
-                                    <h5>HAVE AN ACCOUNT?</h5>
-                                    <a href="/login">sign in</a>
-                                </div>
-                            </form>
-
+                    </div>
                 </div>
-                <div class="col-3">
-
-                </div>
-
             </div>
+        </div>
+    </section>
 
 
-
-
-        </div><!--main div end-->
-    </section><!--section 6 end-->
-
-
-
+   
     <%- include("./footer.ejs") %>

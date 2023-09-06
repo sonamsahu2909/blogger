@@ -1,46 +1,48 @@
 <%- include('./header.ejs') %>
   <!-- profile -->
   <!-- <h1>profile</h1> -->
-  <div class="container text-dark text-white h-30">
-    <section class="h-100 gradient-form" style="background-color: white;">
-      <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-xl-7 mt-5 pt-5">
-            <div class="card rounded-3 text-black">
-              <div class="row g-0">
-                <% if(error.length > 0){ %>
-                  <div class="alert alert-danger">
-                      <%= error %>
-                  </div>
-                <% } %>
-                <% if(message.length > 0){ %>
-                  <div class="alert alert-success">
-                      <%= message %>
-                  </div>
-                <% } %>
-
-                <div class="col-lg-12 bg-dark rounded-4 ">
-                  <div class="container">
-                    <div class="card-body p-md-5 mx-md-5">
-
-                      <div class="text-center text-white">
-                        <img src="<%= image.url %>" style="width: 22%; height:130px;position: relative;left: 239px; border-radius: 100px; border: 4px solid white;" alt="logo" >
-                        <h4 class="mt-2 mb-2 "><b><%= n %></b></h4>
-                        <p class="mb-2"><%= e %></p>
-                        <div style="font-size:35px; display: flex; gap: 20px; justify-content: center; " class="mb-3">
-                          <i class="fab fa-facebook-f "></i>
-                          <i class="fa-brands fa-instagram"></i>
-                          <i class="fab fa-twitter"></i>
-                          <i class="fa-brands fa-linkedin"></i>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <button data-bs-toggle="modal" data-bs-target="#change_password" class="btn btn-warning rounded-5 form-control">change password</button>
-                            
+  <div class="container-fluid mb-4 pb-5" style="background-color: #d1e9ed;">
+    <div class="container text-dark text-white h-30" style="background-color: #d1e9ed;">
+      <section class="h-100 gradient-form" style="background-color: white;">
+        <div class="container py-5 h-100" style="background-color: #d1e9ed;">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-7 mt-5 pt-5">
+              <div class="card rounded-3 text-dark">
+                <div class="row g-0">
+                  <% if(error.length > 0){ %>
+                    <div class="alert alert-danger">
+                        <%= error %>
+                    </div>
+                  <% } %>
+                  <% if(message.length > 0){ %>
+                    <div class="alert alert-success">
+                        <%= message %>
+                    </div>
+                  <% } %>
+  
+                  <div class="col-lg-12 bg-light rounded-4 ">
+                    <div class="container">
+                      <div class="card-body p-md-5 mx-md-5 mb-5 pb-5">
+  
+                        <div class="text-center  txt-green">
+                          <img src="<%= image.url %>" style="width: 28%; height:130px;position: relative;left: 170px; border-radius: 100px; border: 4px solid white;" alt="logo" >
+                          <h4 class="mt-2 mb-2 "><b><%= n %></b></h4>
+                          <p class="mb-2"><%= e %></p>
+                          <div style="font-size:35px; display: flex; gap: 20px; justify-content: center; " class="mb-3 txt-green">
+                            <i class="fab fa-facebook-f "></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fa-brands fa-linkedin"></i>
                           </div>
-                          <div class="col-md-6">
-                           
-                            <button data-bs-toggle="modal" data-bs-target="#change_profile" class="btn btn-warning rounded-5 form-control">change profile</button>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <button data-bs-toggle="modal" data-bs-target="#change_password" class="btn btn-warning bg-green border-0 rounded-5 form-control">change password</button>
+                              
+                            </div>
+                            <div class="col-md-6">
+                             
+                              <button data-bs-toggle="modal" data-bs-target="#change_profile" class="btn btn-warning  bg-green border-0 rounded-5 form-control">change profile</button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -51,8 +53,8 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 
   <!-- change password modal -->

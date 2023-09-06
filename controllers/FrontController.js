@@ -1,6 +1,7 @@
 const AdminModel = require("../models/Admin");
 const BlogModel = require("../models/Blog");
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const CategoryModel = require("../models/Category");
 const cloudinary = require("cloudinary").v2;
 
 
@@ -83,13 +84,14 @@ class FrontController {
   static readmore = async(req,res)=>{
     try{
      const detail = await BlogModel.findById(req.params.id)
-     const recentbolg = await BlogModel.find().limit(6)
-     
-     res.render('read more',{d:detail, r:recentbolg})
+     const recentblog = await BlogModel.find().limit(6)
+     const recentcategorydetail = await CategoryModel.findById(req.params.id)
+     const recentcategory = await CategoryModel.find().limit(6)
+     res.render('read more',{d:detail, r:recentblog,cd:recentcategorydetail,rcat:recentcategory})
 
     }
-    catch(erroe){
-       console.log(erroe)
+    catch(error){
+       console.log(error)
     }
  }
 

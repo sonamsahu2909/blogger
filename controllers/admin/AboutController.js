@@ -15,8 +15,8 @@ class AboutController {
   static AboutDisplay = async (req, res) => {
     try {
       const data = await AboutModel.find();
-      const {name,email,image,id} = await AdminModel.findOne()
-      res.render("admin/about/display", { d: data, n:name , e:email, image:image });
+      // const {name,email,image,id} = await AdminModel.findOne()
+      res.render("admin/about/display", { d: data });
     } catch (error) {
       console.log(error);
     }
@@ -24,7 +24,7 @@ class AboutController {
 
   static insertAbout = async (req, res) => {
     try {
-      //console.log(req.files.image)
+      // console.log(req.files.image)
 
       const file = req.files.image;
       const myimage = await cloudinary.uploader.upload(file.tempFilePath, {
@@ -33,7 +33,7 @@ class AboutController {
 
       // console.log(myimage)
       const result = new AboutModel({
-        description: req.body.description,
+        describe: req.body.describe,
         image: {
           public_id: myimage.public_id,
           url: myimage.secure_url,
@@ -41,8 +41,8 @@ class AboutController {
       });
 
       await result.save();
-    //   console.log(result)
-      res.redirect("/admin/about/display");
+      // console.log(result)
+      res.redirect("admin/about/display");
     } catch (error) {
       console.log(error);
     }

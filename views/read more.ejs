@@ -3,31 +3,68 @@
 
 
 
-<section class="section7">
-    <div class="heading">
-        <h1><%= d.title %></h1>
-         <p>by PNINFOSYS on <span><%= d.createdAt.toLocaleDateString() %></span></p>
+  <section class="section7 mt-4">
+    <div class="heading ">
+      <h1 class="text-start">
+        <%= d.title %>
+      </h1>
+      <p class="text-start">EARTH-STORE on <span>
+          <%= d.createdAt.toLocaleDateString() %>
+        </span></p>
     </div>
-    <div class="img">
-               <img src="<%= d.image.url %>">
-     </div>
-    <div class="text">
-     <p><%= d.description %></p>
+    <div class="img ms-5 ps-5 text-start">
+      <img src="<%= d.image.url %>">
+    </div>
+    <div class="text align-item-justify">
+      <p>
+        <%= d.description %>
+      </p>
     </div>
     <div class="blogs">
 
-       
- <div class="head"><h2>Bloge</h2> <% r.forEach((recentitem)=>{   %>
-         <div class="images">
-         <img src="<%= recentitem.image.url %>">
-         <div><p>  <h4><%= recentitem.title %></h4> <%= recentitem.createdAt.toLocaleDateString() %></p></div></div>
 
-        <%    })  %></div>
-    
-       <div class="foot"><h2>Categories</h2></div>
+      <div class="bg-white p-4 mt-4 me-4">
+        <div class="head">
+          <h2 class="bg-green">Blog</h2>
+          <% r.forEach((recentitem)=>{ %>
+            <div class="images">
+              <img src="<%= recentitem.image.url %>">
+              <div>
+                <p>
+                <h4>
+                  <%= recentitem.title %>
+                </h4>
+                <%= recentitem.createdAt.toLocaleDateString() %>
+                  </p>
+              </div>
+            </div>
+  
+            <% }) %>
+        </div>
+  
+        <div class="footer">
+          <h2 class="bg-green px-4 py-1">Categories</h2>
+          <% rcat.forEach((recentitem)=>{ %>
+            <div class="images">
+              <img src="<%= recentitem.image.url %>">
+              <div>
+                <p>
+                <h4>
+                  <%= recentitem.title %>
+                </h4>
+                <%= recentitem.createdAt.toLocaleDateString() %>
+                  </p>
+              </div>
+            </div>
+  
+            <% }) %>
+        </div>
+      </div>
 
     </div>
-    
-</section>
 
-<%- include("./footer.ejs") %>
+    </div>
+
+  </section>
+
+  <%- include("./footer.ejs") %>

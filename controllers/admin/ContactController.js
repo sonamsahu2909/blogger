@@ -1,14 +1,14 @@
 const AdminModel = require("../../models/Admin");
 const ContactModel = require("../../models/Contact");
-const { display } = require("../TeacherController");
+// const { display } = require("../TeacherController");
 
 class ContactController{
 
     static displayContact = async (req,res)=>{
         try{
-            const display = await ContactModel.find()
-            const {name,email,image,id} = await AdminModel.findOne()
-            res.render('admin/contact/display',{d:display, n:name , e:email, image:image})
+            const contact = await ContactModel.find().sort({_id:-1})
+            // const {name,email,image,id} = await AdminModel.findOne()
+            res.render('admin/contact/display',{d:contact})
         }
         catch(error){
             console.log(error)
@@ -29,7 +29,7 @@ class ContactController{
     
           await insert.save();
           // console.log(insert)
-          res.redirect("admin/contact/display");
+          res.render("contact");
         } catch (error) {
           console.log(error);
         }

@@ -3,11 +3,15 @@ const mongoose = require("mongoose");
 // define schema
 const AboutSchema = new mongoose.Schema(
   {
-    name: {
-      type: String,
-      required: true,
-    },
-    email: {
+    // name: {
+    //   type: String,
+    //   required: true,
+    // },
+    // email: {
+    //   type: String,
+    //   required: true,
+    // },
+    describe: {
       type: String,
       required: true,
     },
@@ -18,10 +22,6 @@ const AboutSchema = new mongoose.Schema(
       url: {
         type: String,
       },
-    },
-    description: {
-      type: String,
-      required: true,
     },
   },
   { timestamps: true }
