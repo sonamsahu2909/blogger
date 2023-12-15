@@ -47,75 +47,7 @@
      }
  }
 
- /*header*/
- /* header {
-     width: 100%;
-     height: 60px;
-     background-color: #386576;
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-
- }
-
- header img {
-     width: 171px;
-     height: 30px;
-     margin-left: 114px;
- }
-
- header a {
-     text-decoration: none;
-     color: whitesmoke;
-     font-size: 20px;
-
-     margin-right: 183px;
-     margin-left: -147px;
- } */
-
- /*footer*/
- /* footer {
-     width: 100%;
-     height: 320px;
-     background-color: #222324;
-     text-align: center;
-
-
-
- }
-
- footer h1 {
-     color: whitesmoke;
-     font-size: 48px;
-     padding-top: 40px;
- }
-
- footer p {
-     color: whitesmoke;
-     font-size: 18px;
- }
-
- footer .icon {
-     display: flex;
-     justify-content: center;
-     margin-top: 20px;
- }
-
- footer .s {
-     width: 220px;
-     height: 59px;
-     color: whitesmoke;
-     background-color: #0dcaf0;
-     font-size: 40px;
-     margin-right: 46px;
-     margin-top: 38px;
- }
-
- footer .s i:hover {
-     color: #f79d16;
- }
- */
-
+ 
 
  .last {
      text-align: center;
@@ -359,9 +291,9 @@
 }
 
  /*section 2*/
+
+
 /* 
-
-
  .section6 {
      height: 600px;
      width: 100%;
@@ -474,7 +406,7 @@
  .section6 .other a:hover {
      color: yellow;
  }
- */
+  */
 
 
 
@@ -533,4 +465,17 @@
 
  .section7 .images h4 {
      font-size: 23px;
+ }
+
+ /* contact */
+ .contact{
+    width: 100%;
+ }
+
+ @media(max-width:400px){
+    .contact{
+        width: 400px;
+        height: 300px;
+    }
+   
  }
